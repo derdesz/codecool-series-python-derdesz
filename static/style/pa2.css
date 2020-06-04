@@ -1,0 +1,20 @@
+.rating-card{
+    border: solid black 3px;
+    background: #A5D6D9;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    height: 100px;
+    width: 80px;
+}
+
+.card{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.select{
+    background: #3A7734;
+}

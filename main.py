@@ -14,9 +14,19 @@ def index():
 def design():
     return render_template('design.html')
 
+@app.route('/pa3')
+def pa3():
+    return render_template('pa5.html')
+
+
+@app.route('/pa2')
+def pa2():
+    pa2_query_result = queries.pa2()
+    return render_template('pa2.html', pa2_query_result=pa2_query_result)
 
 def main():
     app.run(debug=True)
+
 
 
 if __name__ == '__main__':
