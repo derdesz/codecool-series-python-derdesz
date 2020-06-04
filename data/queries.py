@@ -17,3 +17,21 @@ def pa2():
     GROUP BY year
     ORDER BY year ASC;
     """)
+
+
+def pa7(genre):
+    return data_manager.execute_select(
+    """
+    SELECT 
+        shows.title,
+        COUNT(show_characters.actor_id) AS actor_count
+    FROM shows
+    JOIN show_genres
+        ON shows.id = show_genres.show_id
+    JOIN genres
+        ON show_genres.genre_id = genres.id
+    JOIN show_characters
+	    ON shows.id = show_characters.show_id    
+    WHERE genres.name = %(genre)s
+    GROUP BY shows.title
+    """, {'genre': genre})
